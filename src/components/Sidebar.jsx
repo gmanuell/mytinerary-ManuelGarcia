@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import logo from '../public/logo.png'
+
 
 const routes = [
 
@@ -16,14 +16,14 @@ export default function Sidebar() {
 
     <nav className='container flex flex-wrap items-center justify-between mx-auto'>
     <img
-      src="../logo.png"
-      className="h-8 mr-3 sm:h-10"
-      alt="Logo"
-    />
+  src="/logo.png" 
+  className="h-8 mr-3 sm:h-10"
+  alt="Logo"
+/>
         <ul className='flex gap-4'>
             {routes.map((r) => (
                 <li 
-                key={index}
+                // key={index}
                 >
                     <NavLink to={r.to} className={({isActive})=> isActive ? "text-green-500":""}>{r.text}</NavLink>
                 </li>
