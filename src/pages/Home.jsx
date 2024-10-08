@@ -36,12 +36,37 @@ const Home = () => {
   const navigate = useNavigate();
   
   return (
-    <div className="Home">
-      <button onClick={useNavigate("/cities")} className='p-2 bg-slate-200 hover:bg-slate-600'>call to action</button>
-      <h1 className="text-2xl font-bold text-center">Carrousel</h1>
-      <Carrusel imagenes={imagenes} />
-      <footer></footer>
-    </div>
+    <>
+      <div className="Home">
+        <div className="relative mt-8">
+          {/* Imagen del banner */}
+          <img
+            src="https://es.investinbogota.org/wp-content/uploads/2023/02/Bogota-puerta-de-europa-invest-in-bogota.jpeg"
+            alt="Banner"
+            className="w-full h-[400px] object-cover"
+          />
+          
+          {/* Título y botón sobre la imagen */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-white bg-black bg-opacity-50">
+            <h1 className="text-4xl font-bold mb-4">Explore the Cities</h1>
+
+            {/* Uso correcto de navigate */}
+            <button 
+              onClick={() => navigate("/cities")} // Corrección del onClick
+              className='p-2 bg-orange-600 rounded-lg  hover:bg-slate-600'
+            >
+              Let's go!
+            </button>
+          </div>
+        </div>
+
+        {/* Carrousel y pie de página */}
+        <h1 className="text-2xl font-bold text-center mt-8">Carrousel</h1>
+        <Carrusel imagenes={imagenes} />
+
+        <footer></footer>
+      </div>
+    </>
   );
 };
 
