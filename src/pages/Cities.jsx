@@ -12,7 +12,7 @@ export default function Cities() {
     <>
     <button
     onClick={()=> navigateBack()} 
-    className='p-2 bg-slate-200 hover:bg-slate-500'>Back</button>
+    className='p-2 bg-slate-200 hover:bg-slate-500'>Go Back</button>
 
     <h1>Cities</h1>
     </>

@@ -1,7 +1,7 @@
 import React from 'react';
-import Carrusel from "../components/Carrousel.jsx";
 import { useNavigate } from 'react-router-dom';
 import {  } from "module";
+import Carrusel from '../components/carrousel';
 
 
 
@@ -38,21 +38,21 @@ const Home = () => {
   return (
     <>
       <div className="Home">
-        <div className="relative mt-8">
-          {/* Imagen del banner */}
+        <div className="relative">
+      
           <img
             src="https://es.investinbogota.org/wp-content/uploads/2023/02/Bogota-puerta-de-europa-invest-in-bogota.jpeg"
             alt="Banner"
-            className="w-full h-[400px] object-cover"
+            className="w-full h-5/6 object-cover animate-zoom "
           />
           
-          {/* Título y botón sobre la imagen */}
+
           <div className="absolute inset-0 flex flex-col items-center justify-center text-white bg-black bg-opacity-50">
             <h1 className="text-4xl font-bold mb-4">Explore the Cities</h1>
 
-            {/* Uso correcto de navigate */}
+         
             <button 
-              onClick={() => navigate("/cities")} // Corrección del onClick
+              onClick={() => navigate("/cities")} 
               className='p-2 bg-orange-600 rounded-lg  hover:bg-slate-600'
             >
               Let's go!
@@ -60,9 +60,8 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Carrousel y pie de página */}
-        <h1 className="text-2xl font-bold text-center mt-8">Carrousel</h1>
-        <Carrusel imagenes={imagenes} />
+       
+        <Carrusel imagenes={imagenes}  />
 
         <footer></footer>
       </div>
