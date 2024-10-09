@@ -11,7 +11,7 @@ export default function Standarlayout() {
     <header>
     <Sidebar></Sidebar>        
     </header>
-    <main className='h-full flex-grow'>
+    <main className='min-h-full flex-grow'>
         <Outlet></Outlet>
     </main>
     <footer>
