@@ -6,10 +6,12 @@ import Footer from '../components/Footer'
 export default function Standarlayout() {
   return (
     <>
+    <div className='bg-slate-600 h-full'>
+
     <header>
     <Sidebar></Sidebar>        
     </header>
-    <main className='bg-slate-600  flex-grow'>
+    <main className='min-h-full flex-grow'>
         <Outlet></Outlet>
     </main>
     <footer>
@@ -17,6 +19,7 @@ export default function Standarlayout() {
             <Footer></Footer>
         </h2>
     </footer>
+    </div>
     </>
   )
 }
