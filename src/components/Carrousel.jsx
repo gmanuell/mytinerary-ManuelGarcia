@@ -3,7 +3,7 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const Carrusel = ({ imagenes, intervalo = 3000 }) => {
   const [indiceActual, setIndiceActual] = useState(0);
-  const [itemsPorPagina, setItemsPorPagina] = useState(4); // Cambia dinámicamente
+  const [itemsPorPagina, setItemsPorPagina] = useState(4); 
 
   // Escuchar los cambios en el tamaño de la ventana para ajustar las imágenes mostradas
   useEffect(() => {
