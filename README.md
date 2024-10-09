@@ -1,8 +1,31 @@
-# React + Vite
+MyItinerary
+MyItinerary es una pagina web creada para gestionar y planificar itinerarios de viaje de manera eficiente. Utiliza React para la construcción de interfaces dinámicas, Tailwind CSS para el diseño responsive y moderno, y react-icons para iconografía estilizada.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Tecnologías utilizadas
+React: Biblioteca para construir interfaces de usuario basadas en componentes.
+Tailwind CSS: Framework de CSS para crear interfaces responsivas con clases utilitarias.
+React Icons: Librería de iconos para React que incluye una amplia gama de iconos de diversas bibliotecas.
+Características principales
+Gestión de Itinerarios: Crea, edita y elimina itinerarios personalizados.
+Diseño Responsivo: Adaptable a diferentes tamaños de pantalla utilizando Tailwind CSS.
+Iconografía Moderna: Uso de íconos intuitivos y visualmente atractivos a través de la librería react-icons.
+Componentización: Componentes reutilizables y estructurados en React para facilitar el mantenimiento y escalabilidad.
+Instalación
+Clona el repositorio:
+bash
+Copiar código
+git clone https://github.com/usuario/myitinerary.git
+Entra en el directorio del proyecto:
+bash
+Copiar código
+cd myitinerary
+Instala las dependencias:
+bash
+Copiar código
+npm install
+Uso
+Para iniciar el servidor de desarrollo, ejecuta el siguiente comando:
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+bash
+Copiar código
+npm run dev
