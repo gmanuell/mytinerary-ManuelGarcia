@@ -38,12 +38,12 @@ const Home = () => {
   return (
     <>
       <div className="Home">
-        <div className="relative">
+        <div className="relative h-3/6">
       
           <img
             src="https://es.investinbogota.org/wp-content/uploads/2023/02/Bogota-puerta-de-europa-invest-in-bogota.jpeg"
             alt="Banner"
-            className="w-full h-5/6 object-cover animate-zoom "
+            className="w-full h-3/5 object-cover animate-zoom "
           />
           
 
