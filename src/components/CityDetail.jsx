@@ -52,12 +52,12 @@ export default function City() {
                 key={itinerary._id} 
                 className="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col items-center w-80 max-w-sm"
               >
-                <img src={itinerary.photo} alt={itinerary.name} className="w-24 h-24 rounded-full mb-4" />
+                <img src={itinerary.photo} alt={itinerary.name} className="w-24 h-24 object-scale-down rounded-full mb-4" />
                 <h3 className="text-lg font-bold">{itinerary.name}</h3>
                 <p>Price: {"💵".repeat(itinerary.price)}</p>
                 <p>Duration: {itinerary.duration}</p>
                 <p>Likes: {itinerary.likes}</p>
-                <div className="flex flex-wrap justify-center mt-2">
+                <div className="flex justify-center mt-1">
                   {itinerary.hashtags.map(tag => (
                     <span key={tag} className="text-sm text-gray-300 bg-gray-700 rounded-full px-3 py-1 m-1">{tag}</span>
                   ))}
