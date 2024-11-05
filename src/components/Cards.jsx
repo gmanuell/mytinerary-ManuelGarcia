@@ -45,11 +45,12 @@ const CitiesCards = () => {
           </p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 px-4">
+        <div className="flex flex-wrap justify-center gap-6 px-4">
           {cities.map((city, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105"
+              className="flex-none w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105"
+              
             >
               <img
                 src={city.image}
@@ -58,7 +59,7 @@ const CitiesCards = () => {
               />
               <div className="p-4">
                 <h3 className="text-center text-lg font-semibold text-gray-800">
-                  {city.name} {city.country}
+                  {city.name}, {city.country}
                 </h3>
                 <div className="flex justify-center mt-4">
                   <button
@@ -78,4 +79,3 @@ const CitiesCards = () => {
 };
 
 export default CitiesCards;
-

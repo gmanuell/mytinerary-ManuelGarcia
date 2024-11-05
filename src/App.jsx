@@ -4,7 +4,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Home from './pages/home.jsx';
 import NotFound from './pages/NotFound.jsx';
 import Cities from './pages/Cities.jsx';
-import City from './pages/City.jsx';
+import City from './components/CityDetail.jsx';
 import Standarlayout from './layout/Standarlayout.jsx';
 
 
