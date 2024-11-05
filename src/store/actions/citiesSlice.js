@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// Acción asincrónica para obtener ciudades
 export const fetchCities = createAsyncThunk('cities/fetchCities', async (searchQuery = '') => {
   const response = await axios.get(
     `http://localhost:8080/api/cities/all${searchQuery ? `?name=${searchQuery}` : ''}`
@@ -13,7 +12,7 @@ const citiesSlice = createSlice({
   name: 'cities',
   initialState: {
     list: [],
-    status: 'idle', // idle, loading, succeeded, failed
+    status: 'idle', 
     error: null,
   },
   reducers: {},
