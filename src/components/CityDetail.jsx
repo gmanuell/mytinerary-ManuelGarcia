@@ -38,6 +38,7 @@ export default function City() {
     <div className='flex flex-col items-center justify-center my-5 text-white bg-opacity-50'>
       {city ? (
         <>
+
           <img src={city.image} alt={city.name} className="h-96 rounded-lg w-auto mb-4" />
           <h1 className="text-6xl text-center font-bold mb-4">{city.name} {city.country}</h1>
 
@@ -50,9 +51,12 @@ export default function City() {
             {status === 'succeeded' && itineraries.map(itinerary => (
               <div 
                 key={itinerary._id} 
-                className="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col items-center w-80 max-w-sm"
+                className="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col items-center w-90 max-w-sm"
               >
-                <img src={itinerary.photo} alt={itinerary.name} className="w-24 h-24 object-scale-down rounded-full mb-4" />
+                <h1 className="text-center text-xl font-bold m-4" >{itinerary.description}</h1>
+                <div className='flex text-center '> 
+                  <img src={itinerary.photo} alt={itinerary.name} className="w-24 h-24 object-scale-down rounded-full mb-4" />
+                  <div> 
                 <h3 className="text-lg font-bold">{itinerary.name}</h3>
                 <p>Price: {"💵".repeat(itinerary.price)}</p>
                 <p>Duration: {itinerary.duration}</p>
@@ -62,6 +66,8 @@ export default function City() {
                     <span key={tag} className="text-sm text-gray-300 bg-gray-700 rounded-full px-3 py-1 m-1">{tag}</span>
                   ))}
                 </div>
+                </div>
+                  </div>
                 <button 
                   className="mt-4 bg-orange-600 text-white rounded-lg p-2 w-full"
                   onClick={() => handleViewMoreClick(itinerary._id)}
