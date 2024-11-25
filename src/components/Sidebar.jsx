@@ -60,6 +60,7 @@ export default function Sidebar() {
                   {r.text}
                 </NavLink>
               </li>
+              
             ))}
           </ul>
         </div>
@@ -68,11 +69,10 @@ export default function Sidebar() {
         {token ? (
           <div className="flex items-center space-x-4">
             <img
-              src={user?.avatar || "/default-avatar.png"}
-              alt="User avatar"
+              src={user?.photo || "my.png"}
+              alt="User photo"
               className="w-10 h-10 rounded-full"
             />
-            <span className="text-white">{user?.firstName}</span>
             <button
               onClick={handleLogout}
               className="px-4 py-2 bg-red-600 rounded text-white hover:bg-red-700"
