@@ -18,7 +18,7 @@ const login = createAsyncThunk("login", async({email,password}) => {
         email:email,
         password:password
     }
-    const response = await axios.post("http://localhost:8080/mytinerary/auth/signIn",credentials)
+    const response = await axios.post("http://localhost:8080/api/auth/signIn",credentials)
     console.log("Se proceso la solicitud");
     console.log("Response",response.data);
     console.log("Superamos la solicitud de Login");

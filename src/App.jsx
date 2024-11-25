@@ -10,6 +10,7 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { setUser } from './store/actions/authActions.js';
 import SignRoute from './components/signRoute.jsx';
+import SignUp from './pages/signup.jsx';
 
 const router = createBrowserRouter([
   {element: <Standarlayout></Standarlayout>,
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
       {path:"/cities",element:<Cities></Cities>},
       {path:"/city",element:<City></City>},
       {path: "/signin",element: (<SignRoute><SignIn></SignIn></SignRoute>)},
+      {path: "/signUp",element: (<SignRoute><SignUp></SignUp></SignRoute>)},
       {path:"/*",element:<NotFound></NotFound>},
     ]
   },
