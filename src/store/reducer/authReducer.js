@@ -8,45 +8,84 @@ const initialState = {
     token : null
 }
 
- const authReducer = createReducer(initialState,(builder) => {
-    builder.addCase(login.fulfilled,(state,action)=>{
-        console.log("Se ejecuto correctamente");
-        console.log(action);
+//  const authReducer = createReducer(initialState,(builder) => {
+//     builder.addCase(login.fulfilled,(state,action)=>{
+//         console.log("Se ejecuto correctamente");
+//         console.log(action);
         
         
-        state.loading = false,
-        state.error = false,
-        state.user = action.payload.user,
-        state.token = action.payload.token
-    })
-    .addCase(login.pending,(state,action)=>{
-        console.log("Se inicio sign in");
-        console.log(action);
-        state.loading = true,
-        state.error = false,
-        state.user = null,
-        state.token = null
-    })
-    .addCase(login.rejected,(state,action)=>{
-        console.log("Error en el sign in");
-        localStorage.removeItem("token");
-        state.loading = false,
-        state.error = action.error.message,
-        state.user = null,
-        state.token = null
-    })
+//         state.loading = false,
+//         state.error = false,
+//         state.user = action.payload.user,
+//         state.token = action.payload.token
+//     })
+//     .addCase(login.pending,(state,action)=>{
+//         console.log("Se inicio sign in");
+//         console.log(action);
+//         state.loading = true,
+//         state.error = false,
+//         state.user = null,
+//         state.token = null
+//         localStorage.setItem('user', JSON.stringify(action.payload.response.user));
+//         localStorage.setItem('token', action.payload.response.token);
+//         localStorage.setItem('isAuthenticated', 'true')
+//     })
+//     .addCase(login.rejected,(state,action)=>{
+//         console.log("Error en el sign in");
+//         localStorage.removeItem("token");
+//         state.loading = false,
+//         state.error = action.error.message,
+//         state.user = null,
+//         state.token = null
+//     })
 
-    .addCase(setUser,(state,action)=>{
-        state.user = action.payload.user,
-        state.token = action.payload.token
-    })
+//     .addCase(setUser,(state,action)=>{
+//         state.user = action.payload.user,
+//         state.token = action.payload.token
+//     })
 
-    .addCase(logout,(state,action)=>{
-        localStorage.removeItem("token");
-        state.user = null,
-        state.token = null
-    })
+//     .addCase(logout,(state,action)=>{
+//         localStorage.removeItem("token");
+//         state.user = null,
+//         state.token = null
+//     })
 
-})
+// })
 
-export default authReducer;
+
+const authReducer = createReducer(initialState, (builder) => {
+    builder
+        .addCase(login.fulfilled, (state, action) => {
+            console.log("Inicio de sesión exitoso");
+            state.loading = false;
+            state.error = false;
+            state.user = action.payload.user;
+            state.token = action.payload.token;
+        })
+        .addCase(login.pending, (state) => {
+            console.log("Inicio de sesión en progreso");
+            state.loading = true;
+            state.error = false;
+            state.user = null;
+            state.token = null;
+        })
+        .addCase(login.rejected, (state, action) => {
+            console.log("Error en el inicio de sesión:", action.payload);
+            localStorage.removeItem("token");
+            state.loading = false;
+            state.error = action.payload || "Error desconocido";
+            state.user = null;
+            state.token = null;
+        })
+        .addCase(setUser, (state, action) => {
+            state.user = action.payload?.user || null;
+            state.token = action.payload?.token || null;
+        })
+        .addCase(logout, (state) => {
+            localStorage.clear();
+            state.user = null;
+            state.token = null;
+        });
+    });
+    
+    export default authReducer;
