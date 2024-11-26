@@ -12,11 +12,12 @@ const logout = createAction("logout");
 
 
 
-const login = createAsyncThunk("login", async({email,password}) => {
+const login = createAsyncThunk("login", async({email,firstName, password}) => {
     console.log("Entramos al Login");
     const credentials = {
         email:email,
-        password:password
+        password:password,
+        firstName:firstName
     }
     const response = await axios.post("http://localhost:8080/api/auth/signIn",credentials)
     console.log("Se proceso la solicitud");

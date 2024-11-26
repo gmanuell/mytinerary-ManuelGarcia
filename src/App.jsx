@@ -32,7 +32,7 @@ const loginWithToken = async (token) => {
     console.log("Se ejecuto Login With Token");
 
     const response = await axios.get(
-      "http://localhost:8080/mytinerary/users/validateToken",
+      "http://localhost:8080/api/users/validateToken",
       {
         headers: {
           Authorization: `Bearer ${token}`,
