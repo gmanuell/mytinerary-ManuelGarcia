@@ -34,7 +34,6 @@ export default function Sidebar() {
   return (
     <div className="bg-gray-900 w-full flex flex-row text-white justify-between relative">
       <nav className="flex justify-between items-center w-full p-4">
-        {/* Logo */}
         <div className="flex items-center">
           <button
             onClick={() => navigate("/home")}
@@ -60,14 +59,15 @@ export default function Sidebar() {
                   {r.text}
                 </NavLink>
               </li>
-              
+
             ))}
           </ul>
         </div>
 
-        {/* Menú de usuario o autenticación */}
         {token ? (
           <div className="flex items-center space-x-4">
+            <h3 className="text-5xl text-white">{user?.
+              firstName}</h3>
             <img
               src={user?.photo || "my.png"}
               alt="User photo"
@@ -105,7 +105,6 @@ export default function Sidebar() {
         )}
       </nav>
 
-      {/* Menú móvil */}
       <div className="md:hidden relative">
         <button
           onClick={toggleMobileMenu}
